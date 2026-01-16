@@ -1,0 +1,129 @@
+=== Q1 ===
+MODEL OUTPUT:
+The project named "Реляционная память для ИИ-агентов" (Relational Memory for AI Agents) aims to develop a system for managing experience in AI agent systems on the product "ПроКомпетенции" to enhance the quality of project education by analyzing competencies and generating recommendations. The project includes creating an agent for supporting project education in URFU and other universities, focusing on four tasks: developing memory based on RFT and NARS, combining cognitive science and applied AI components, QLORA adapters for LLM integration, and creating a behavioral data model and an AI agent for ProКомпетенций [ОТЧЕТ Diamond.pdf#p=17].
+
+The first phase of the project is "Анализ Индустрии И Компетенций" (Analysis of Industry and Competencies). Its goal is to determine current industry competencies and identify areas of significant correspondence and gaps between the industry and the educational program. The agent performs the following tasks: analyzing open labor market data [ОТЧЕТ Diamond.pdf#p=17], comparing competencies [ОТЧЕТ Diamond.pdf#p=1], and generating analytical reports [ОТЧЕТ Diamond.pd#p=3].
+
+The fourth phase is "OUTREACH И КВАЛИФИКАЦИЯ" (Outreach and Qualification). Its objective is to establish contact with companies, obtain feedback, and qualify interested partners. The agent performs the following tasks: sending approved emails [Функциональные_требования_агента.pdf#p=5], monitoring and qualifying responses [Функциональные_требования_агента.pdf#p=5], and sending follow-up messages [Функциональные_требования_агента.pdf#p=5]. Human intervention occurs when a positive response is received, leading to a dialogue with the company representative, meetings, project discussions, and agreement signing [Функциональные_требования_агента.pdf#p=5]. The result of Phase 4 is confirmed Project Tasks and completed Partner Agreements.
+
+=== Q2 ===
+MODEL OUTPUT:
+The expected results and achievements by the end of the semester include:
+
+1. A working prototype of an II-agent for project education support on the "ПроКомпетенции" platform, focused on competency analysis and generating textual outputs [ОТЧЕТ Diamond.pdf#p=3].
+2. Data collection and preparation, including gathering job vacancies and extracting competencies, matching supply and demand in industries, and creating matrices of compatibility [ОТЧЕТ Diamond.pdf#p=3].
+3. Analytical artifacts suitable for decision-making, such as statistics, visualizations, and textual recommendations [ОТЧЕТ Diamond.pdf#p=3].
+
+[ОТЧЕТ Diamond.pdf#p=15] states that the product already supports decision-making by automating the key scenario of extracting and comparing competencies between the job market and educational projects and forming analytical artifacts. However, it is not yet integrated into "ПроКомпетенции" due to an unsuitable interface for autonomous agent work [ОТЧЕТ Diamond.pdf#p=15].
+
+[ОТЧЕТ Diamond.pdf#p=8] mentions that universal LLM chatbots can answer queries and extract skills but without domain adaptation and quality control provide inconsistent results and do not scale well for large volumes of jobs or projects [ОТЧЕТ Diamond.pdf#p=8]. There are no direct digital analogs that analyze projects from project platforms and compare them with job vacancies based on competencies [ОТЧЕТ Diamond.pdf#p=8].
+
+[ОТЧЕТ Diamond.pdf#p=18] lists tasks related to identifying skill gaps and surplus, including generating an analytical report, creating visualizations of gaps and zones of fit, and forming recommendations for program correction [ОТЧЕТ Diamond.pdf#p=18].
+
+=== Q3 ===
+MODEL OUTPUT:
+The parser was implemented as a browser extension because there is no API available for "ПроКомпетенции," and it collects project information by gathering IDs from the "ПроКоmpetенции" webpage [doc#p=9]. The parser is designed to be used no more than once per semester due to the frequent updates of projects [doc#p=9]. The data collected by the parser is saved in JSON format for easy use [doc#p=9].
+
+There are APIs available for hh.ru and SuperJob, so job vacancy collectors were developed directly within those projects, and searches are based on keywords [doc#p=10].
+
+For Llama 3.1 8B, a smaller model from Hugging Face that requires an hf token for access, the team chose a quantized model to reduce memory usage and process multiple instructions simultaneously, which increases processing speed significantly [doc#p=13]. They also used the vllm framework for automatic batch size selection and the Instruct model type for better response quality [doc#p=14].
+
+=== Q4 ===
+MODEL OUTPUT:
+The LLM model used in the project is hugging-quants/Meta-Llama-3.1-8B-Instruct-AWQ-INT4 [doc#p=10], which supports 4-bit quantization for memory savings and faster inference [doc#p=10]. The reason for using this specific model is to save video memory and improve inference speed [doc#p=10]. Additionally, vLLM was chosen as the fast inference engine due to its scalability for various video cards [doc#p=10].
+
+Here are the relevant citations:
+
+1. [doc#p=10]: "В качестве LLM используется модель hugging-quants/Meta-Llama-3.1-8B-Instruct-AWQ-INT4[7], так как эта она поддерживает 4-битную квантизацию, что сильно экономит видеопамять и, как следствие, ускоряет инференс."
+2. [doc#p=10]: "В качестве движка для быстрого инференса используется vLLM[8]."
+3. [doc#p=13]: "Модель небольшая, её будем использовать и дообучать. Квантизация модели уменьшает её размер в памяти."
+
+=== Q5 ===
+MODEL OUTPUT:
+During the testing of the Diamond project, typical errors were identified, including empty responses, duplicates, irrelevant competencies, and unstable formats. Measures to address these issues included post-processing, prompt refinement, manual correction in disputed cases, experiments with generation parameters, and the addition of the QLoRA adapter [ОТЧЕТ Diamond.pdf#p=13]. The project initially used a non-quantized Llama-3.1-8B model on the Transformers framework, but faced issues such as high memory consumption, slow inference, low-quality responses, and the need to manually select batch sizes. To improve performance, the team employed the vllm framework, which automatically sets batch sizes, a quantized model, and a "Instruct" model type for better response quality [ОТЧЕТ Diamond.pdf#p=13].
+
+In the context of generating individual value propositions, the agent was responsible for creating personalized emails or LinkedIn messages, adapting content to company and LPR specifics, preparing text variants with different tones, and forming a presentation about the ProCompetencies program, creating FAQs for partners, preparing templates for agreements, describing benefits for partner companies, and planning first contacts and follow-ups [Функциональные_требования_агента.pdf#p=4]. For Phase 3, the human would review and approve the agent's final texts for LPRs, ensuring the stylistic tone and key message were appropriate, providing personal touch, making corrections if necessary, and approving the sending of the communication packages, which included approved content for each company, personalized emails, presentational materials, a communication plan, and follow-ups [Функциональные_требования_агента.pdf#p=5].
+
+Quotes:
+[ОТЧЕТ Diamond.pdf#p=13]: "По результатам тестирования выявлялись типовые ошибки (пустые ответы, дубли, нерелевантные компетенции, нестабильный формат), после чего внедрялись меры: постобработка, уточнение промптов, ручная корректировка в спорных случаях, эксперименты с параме
+
+=== Q6 ===
+MODEL OUTPUT:
+Functional requirements for the company search and scoring module are as follows:
+
+FR-2.1: The system should search for companies in a specified industry using databases and open sources. [doc#p=29, FR-2.1]
+FR-2.2: The system should collect public information about companies, including technology stack, projects, and size. [doc#p=29, FR-2.2]
+FR-2.3: The system should calculate company scores based on the compatibility criteria (0-100 points). [doc#p=29, FR-2.3]
+FR-2.4: The system should generate ranked lists of Top-10 and Top-100 companies. [doc#p=29, FR-2.4]
+FR-2.5: The system should provide an interface for human verification and editing of the shortlist. [doc#p=29, FR-2.5]
+FR-2.6: The system should create company profiles with contact information for LPR. [doc#p=29, FR-2.6]
+
+These requirements are also mentioned in the "Функциональные требования агента.pdf" document on pages 7 and 9. [doc#p=7, FR-2.1 to FR-2.6] [doc#p=9, FR-2.1 to FR-2.6]
+
+=== Q7 ===
+MODEL OUTPUT:
+The non-functional requirements NFR-1 to NFR-6 are as follows:
+
+NFR-1: Security - the system must protect personal data of companies and students (GDPR, 152-FZ) [doc#p=9, 29, 6]
+NFR-2: Scalability - the system must handle up to 1000 companies simultaneously [doc#p=9, 29]
+NFR-3: Productivity - generating a letter should not take more than 30 seconds [doc#p=9, 29]
+NFR-4: Availability - the system must be available 99% of the time [doc#p=9, 29]
+NFR-5: Integration - the system must integrate with APIs from HeadHunter, LinkedIn, and email services [doc#p=9, 29, 33]
+NFR-6: Multilingual support - the system must work in Russian and English languages [doc#p=9, 29]
+
+=== Q8 ===
+MODEL OUTPUT:
+KPI-1: Forming a pool of over 100 potential partners within a month [ОТЧЕТ Diamond.pdf#p=11, 37]
+KPI-2: Achieving over 15% response rate on emails [ОТЧЕТ Diamond.pdfe#p=11, 37]
+KPI-3: Closing deals with 10 or more companies per semester [ОТЧЕТ Diamond.pdf#p=11, 37]
+KPI-4: Creating a catalog of 20 or more real projects [ОТЧЕТ Diamond.pdf#p=11, 37]
+KPI-5: Reducing partner search time from 2 months to 2 weeks [ОТЧЕТ Diamond.pdf#p=11, 37]
+KPI-6: Ensuring student satisfaction with project quality exceeds 4/5 [ОТЧЕТ Diamond.pdf#p=38]
+
+Backlog items for the first semester included:
+1.2) Creating a clear mapping of "industry ↔ program/project" [ОТЧЕТ Diamond.pdf#p=6]
+1.3) Receiving recommendations for program adjustments if industry mismatches are critical. [ОТЧЕТ Diamond.pdf#p=6]
+
+Existing tools for competencies and HR analytics often provide statistics and reports but do not effectively extract competencies from unstructured text without LLM and are not tailored to project-based learning. [ОТЧЕТ Diamond.pdf#p=7]
+
+=== Q9 ===
+MODEL OUTPUT:
+The most in-demand skills in projects include Python, Data Analysis, and Machine Learning. Deficiencies in projects were identified as Product Management and UX/UI. Successful teams consist of 3-4 people with complementary skills [doc#p=7].
+
+The Diamond project analyzes competencies by industry and generates recommendations based on the analysis. It identifies top competencies from jobs (top_demand) and projects (top_supply), as well as gaps and redundancies. The project then provides recommendations to address these issues [doc#p=7, 17].
+
+Universal LLM chatbots can answer queries and extract skills but lack domain adaptation and quality control, leading to unstable results and poor scalability [doc#p=8].
+
+The development methodology follows an iterative approach: data → extraction → check → improvement, as the quality of competency extraction depends on the prompt, parameters, and source texts [doc#p=13].
+
+[1] "Самые востребованные навыки: Python, Data Analysis, ML" [doc#p=7]
+[2] "Дефицитные компетенции в проектах: Product Management, UX/UI" [doc#p=7]
+[3] "Успешные команды: 3-4 человек с complementary skills" [doc#p=7]
+
+=== Q10 ===
+MODEL OUTPUT:
+The following tasks are mentioned in the context for the next Knowledge Task (KT):
+
+1. Forming a pool and scoring of companies [Diamond кt1.pdf#p=10]
+   - Finding companies in approved industries
+   - Scoring and ranking companies
+   - Preparing company profiles
+2. Strategic communication [Diamond кt1.pdf#p=10]
+   - Generating personalized drafts
+   - Preparing communication materials
+   - Planning contacts
+3. Analyzing data and generating recommendations [Diamond кt1.pdf#p=17]
+   - Reading stats.json, competency_gaps_and_redundancy.json, and the filtered competency matrix
+   - Preparing a compact dataset for each industry, including top competencies from vacancies and projects, gaps, redundancies, and matches
+4. Forming the RECOMMENDATIONS\_PROMPT and calling llama.ask\_one(prompt) for each industry [Diamond кt1.pdf#p=17]
+5. Writing results in recommendations.json and reco\_log.txt [Diamond кt1.pdf#p=17]
+
+Additionally, the project involves:
+
+1. Developing and integrating QLoRA adapters to adapt LLM to specific domains [ОТЧЕТ Diamond#p=4]
+2. Creating an interface for easy interaction with the agent and analysis results [ОТЧЕТ Diamond#p=3]
+
+[1] "ПроКомпетенции" is a product or platform name mentioned in the context.
+[2] LLM refers to the Language Model used in the project.
+[3] QLoRA is a technology used for adapting the Language Model to specific domains.
+

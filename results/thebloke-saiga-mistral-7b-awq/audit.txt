@@ -1,0 +1,12 @@
+=== AUDIT1 folder=Diamond кт1 ===
+MODEL OUTPUT:
+
+
+=== AUDIT2 folder=ОТЧЁТ Diamond ===
+MODEL OUTPUT:
+
+
+=== AUDIT3 folder=Функциональные_требования_агента ===
+MODEL OUTPUT:
+
+
